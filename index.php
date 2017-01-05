@@ -1,3 +1,11 @@
+<?php
+session_start();
+
+if(!isset($_SESSION['authed']))
+{
+	header("Location: login.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="zh-Hant-TW">
 <head>
@@ -50,6 +58,7 @@ $(document).ready(function(){
         <h2 class="form-signin-heading">小小日記本
         <button class="btn btn-info" type="button" id="btn-add"> <span class="glyphicon glyphicon-pencil"></span> &nbsp; 寫日記</button>
         <button class="btn btn-info" type="button" id="btn-view"> <span class="glyphicon glyphicon-eye-open"></span> &nbsp; 看日記</button>
+		<a href="logout.php" class="btn btn-info"><span class="glyphicon glyphicon-log-out"></span>&nbsp;登出</a>
 		</h2>
 
         <div class="content-loader">
