@@ -19,12 +19,12 @@
 
         <tr>
             <td>標題</td>
-            <td><input type='text' name='title' class='form-control' placeholder='例：無題' required /></td>
+            <td><input type='text' name='title' maxlength='20' class='form-control' placeholder='例：無題' required /></td>
         </tr>
 
         <tr>
             <td>內文</td>
-            <td><input type='text' name='article' class='form-control' placeholder='例：今天什麼也沒做' required></td>
+            <td><input type='text' name='article' maxlength='100' class='form-control' placeholder='例：今天什麼也沒做' required></td>
         </tr>
 
         <tr>

@@ -30,12 +30,12 @@ if($_GET['edit_time'])
  		<input type='hidden' name='time' value='<?php echo $row['time']; ?>' />
         <tr>
             <td>標題</td>
-            <td><input type='text' name='title' class='form-control' value='<?php echo $row['title']; ?>' required></td>
+            <td><input type='text' name='title' maxlength='20' class='form-control' value='<?php echo $row['title']; ?>' required></td>
         </tr>
 
         <tr>
             <td>內文</td>
-            <td><input type='text' name='article' class='form-control' value='<?php echo $row['article']; ?>' required></td>
+            <td><input type='text' name='article' maxlength='100' class='form-control' value='<?php echo $row['article']; ?>' required></td>
         </tr>
 
         <tr>
