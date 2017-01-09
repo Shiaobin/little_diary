@@ -1,7 +1,6 @@
 <?php
 require_once 'dbconfig.php';
 
-
 if ($_POST) {
     $title= $_POST['title'];
     $article = $_POST['article'];
