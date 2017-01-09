@@ -1,5 +1,4 @@
 <?php
-
     $db_host = 'localhost';
     $db_name = 'little_diary';
     $db_user = 'little_diary';

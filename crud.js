@@ -33,14 +33,12 @@ $(document).ready(function() {
     $('.edit-link').click(function() {
         var time = $(this).data('date');
         var edit_time = time;
-        if (confirm('確定要編輯 ' + edit_time + ' 嗎？')) {
-            $('.content-loader').fadeOut('slow', function() {
-                $('.content-loader').fadeIn('slow');
-                $('.content-loader').load('edit_form.php?edit_time=' + encodeURI(edit_time));
-                $('#btn-add').hide();
-                $('#btn-view').show();
-            });
-        }
+        $('.content-loader').fadeOut('slow', function() {
+            $('.content-loader').fadeIn('slow');
+            $('.content-loader').load('edit_form.php?edit_time=' + encodeURI(edit_time));
+            $('#btn-add').hide();
+            $('#btn-view').show();
+        });
         return false;
     });
 
