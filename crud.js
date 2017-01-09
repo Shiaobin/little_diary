@@ -2,13 +2,16 @@ $(document).ready(function() {
 
     /* Data Insert */
     $(document).on('submit', '#diary-SaveForm', function() {
-
         $.post('create.php', $(this).serialize())
             .done(function(data) {
                 $('#dis').fadeOut();
                 $('#dis').fadeIn('slow', function() {
                     $('#dis').html('<div class="alert alert-info">' + data + '</div>');
                     $('#diary-SaveForm')[0].reset();
+                    $('body').fadeOut('slow', function() {
+                        $('body').fadeOut('slow');
+                        window.location.href = '.';
+                    });
                 });
             });
         return false;
@@ -44,7 +47,6 @@ $(document).ready(function() {
 
     /* Update Record  */
     $(document).on('submit', '#diary-UpdateForm', function() {
-
         $.post('update.php', $(this).serialize())
             .done(function(data) {
                 $('#dis').fadeOut();
