@@ -9,8 +9,8 @@ $(document).ready(function() {
                     $('#dis').html('<div class="alert alert-info">' + data + '</div>');
                     $('#diary-SaveForm')[0].reset();
                     $('body').fadeOut('slow', function() {
-                        $('body').fadeOut('slow');
-                        window.location.href = '.';
+                        $('body').load('.');
+                        $('body').fadeIn('slow');
                     });
                 });
             });
@@ -54,8 +54,8 @@ $(document).ready(function() {
                     $('#dis').html('<div class="alert alert-info">' + data + '</div>');
                     $('#diary-UpdateForm')[0].reset();
                     $('body').fadeOut('slow', function() {
-                        $('body').fadeOut('slow');
-                        window.location.href = '.';
+                        $('body').load('.');
+                        $('body').fadeIn('slow');
                     });
                 });
             });

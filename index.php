@@ -40,7 +40,6 @@ $stmt->execute();
                 $('body').fadeOut('slow', function() {
                     $('body').load('.');
                     $('body').fadeIn('slow');
-                    window.location.href = '.';
                 });
             });
 
