@@ -1,7 +1,8 @@
 <?php
+session_start();
 require_once 'dbconfig.php';
 
-if ($_POST) {
+if (isset($_SESSION['authed']) && $_POST) {
     $title= $_POST['title'];
     $article = $_POST['article'];
 
