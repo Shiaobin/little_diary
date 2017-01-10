@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-    /* Data Insert */
+    /* Post Insert */
     $(document).on('submit', '#diary-SaveForm', function() {
         $.post('create.php', $(this).serialize())
             .done(function(data) {
@@ -18,7 +18,7 @@ $(document).ready(function() {
         return false;
     });
 
-    /* Data Delete */
+    /* Post Delete */
     $('.delete-link').click(function() {
         var time = $(this).data('date');
         var del_time = time;
@@ -46,7 +46,7 @@ $(document).ready(function() {
         return false;
     });
 
-    /* Update Record  */
+    /* Post Update */
     $(document).on('submit', '#diary-UpdateForm', function() {
         $.post('update.php', $(this).serialize())
             .done(function(data) {
@@ -59,6 +59,19 @@ $(document).ready(function() {
                         $('body').load('.');
                         $('body').fadeIn('slow');
                     });
+                });
+            });
+        return false;
+    });
+
+    /* Password Update */
+    $(document).on('submit', '#diary-PasswordForm', function() {
+        $.post('password.php', $(this).serialize())
+            .done(function(data) {
+                $('#dis').fadeOut();
+                $('#dis').fadeIn('slow', function() {
+                    $('#dis').html('<div class="alert alert-info">' + data + '</div>');
+                    $('#diary-PasswordForm')[0].reset();
                 });
             });
         return false;

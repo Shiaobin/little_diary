@@ -3,7 +3,7 @@ session_start();
 require_once 'dbconfig.php';
 
 if (isset($_POST['btn-login'])) {
-    $password = trim($_POST['password']);
+    $password = $_POST['password'];
 
     try {
         $stmt = $db_con->prepare('SELECT * FROM little_diary_configs WHERE config="password"');
