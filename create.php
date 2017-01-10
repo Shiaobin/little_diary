@@ -6,7 +6,7 @@ if ($_POST) {
     $article = $_POST['article'];
 
     try {
-        $stmt = $db_con->prepare('INSERT INTO posts(title, article) VALUES(:title, :article)');
+        $stmt = $db_con->prepare('INSERT INTO little_diary_posts(title, article) VALUES(:title, :article)');
         $stmt->bindParam(':title', $title);
         $stmt->bindParam(':article', $article);
 

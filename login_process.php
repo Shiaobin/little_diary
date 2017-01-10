@@ -6,7 +6,7 @@ if (isset($_POST['btn-login'])) {
     $password = trim($_POST['password']);
 
     try {
-        $stmt = $db_con->prepare('SELECT * FROM configs WHERE config="password"');
+        $stmt = $db_con->prepare('SELECT * FROM little_diary_configs WHERE config="password"');
         $stmt->execute();
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
         $count = $stmt->rowCount();

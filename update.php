@@ -6,7 +6,7 @@ if ($_POST) {
     $title = $_POST['title'];
     $article = $_POST['article'];
 
-    $stmt = $db_con->prepare('UPDATE posts SET title=:title, article=:article WHERE time=:time');
+    $stmt = $db_con->prepare('UPDATE little_diary_posts SET title=:title, article=:article WHERE time=:time');
     $stmt->bindParam(':title', $title);
     $stmt->bindParam(':article', $article);
     $stmt->bindParam(':time', $time);

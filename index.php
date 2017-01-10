@@ -6,7 +6,7 @@ if (!isset($_SESSION['authed'])) {
 }
 require_once 'dbconfig.php';
 
-$stmt = $db_con->prepare('SELECT * FROM posts ORDER BY time DESC');
+$stmt = $db_con->prepare('SELECT * FROM little_diary_posts ORDER BY time DESC');
 $stmt->execute();
 ?>
 <!DOCTYPE html>

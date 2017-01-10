@@ -3,7 +3,7 @@ include_once 'dbconfig.php';
 
 if ($_GET['edit_time']) {
     $time = $_GET['edit_time'];
-    $stmt=$db_con->prepare('SELECT * FROM posts WHERE time=:time');
+    $stmt=$db_con->prepare('SELECT * FROM little_diary_posts WHERE time=:time');
     $stmt->execute(array(':time'=>$time));
     $row=$stmt->fetch(PDO::FETCH_ASSOC);
 }

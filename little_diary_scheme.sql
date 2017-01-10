@@ -26,7 +26,7 @@ SET time_zone = "+00:00";
 -- 資料表結構 `configs`
 --
 
-CREATE TABLE IF NOT EXISTS `configs` (
+CREATE TABLE IF NOT EXISTS `little_diary_configs` (
   `config` varchar(21) COLLATE utf8_unicode_ci NOT NULL,
   `value` varchar(101) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`config`)
@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS `configs` (
 -- 資料表結構 `posts`
 --
 
-CREATE TABLE IF NOT EXISTS `posts` (
+CREATE TABLE IF NOT EXISTS `little_diary_posts` (
   `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `title` varchar(21) COLLATE utf8_unicode_ci DEFAULT NULL,
   `article` varchar(101) COLLATE utf8_unicode_ci NOT NULL,
