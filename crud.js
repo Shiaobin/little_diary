@@ -4,15 +4,18 @@ $(document).ready(function() {
     $(document).on('submit', '#diary-SaveForm', function() {
         $.post('create.php', $(this).serialize())
             .done(function(data) {
-                $('#dis').fadeOut();
-                $('#dis').fadeIn('slow', function() {
+                $('#diary-SaveForm').wrap('<fieldset disabled></fieldset>');
+                $('#dis').fadeOut('slow', function() {
                     $('#dis').html('<div class="alert alert-info">' + data + '</div>');
-                    $('#diary-SaveForm')[0].reset();
-                    $('body').fadeOut('slow', function() {
-                        $(document).off();
-                        $('body').load('.');
-                        $('body').fadeIn('slow');
-                    });
+                });
+                $('#dis').fadeIn('slow', function() {
+                    setTimeout(function() {
+                        $('body').fadeOut('slow', function() {
+                            $(document).off();
+                            $('body').load('.');
+                            $('body').fadeIn('slow');
+                        });
+                    }, 5000);
                 });
             });
         return false;
@@ -33,13 +36,14 @@ $(document).ready(function() {
         return false;
     });
 
-    /* Get Edit Time  */
+    /* Post Edit */
     $('.edit-link').click(function() {
-        var time = $(this).data('date');
-        var edit_time = time;
+        var edit_time = $(this).data('date');
         $('.content-loader').fadeOut('slow', function() {
             $('.content-loader').fadeIn('slow');
-            $('.content-loader').load('edit_form.php?edit_time=' + encodeURI(edit_time));
+            $('.content-loader').load('edit_form.php?edit_time=' + encodeURI(edit_time), function() {
+                $('#diary-UpdateForm input:first').focus();
+            });
             $('#btn-add').hide();
             $('#btn-view').show();
         });
@@ -50,15 +54,18 @@ $(document).ready(function() {
     $(document).on('submit', '#diary-UpdateForm', function() {
         $.post('update.php', $(this).serialize())
             .done(function(data) {
-                $('#dis').fadeOut();
-                $('#dis').fadeIn('slow', function() {
+                $('#diary-UpdateForm').wrap('<fieldset disabled></fieldset>');
+                $('#dis').fadeOut('slow', function() {
                     $('#dis').html('<div class="alert alert-info">' + data + '</div>');
-                    $('#diary-UpdateForm')[0].reset();
-                    $('body').fadeOut('slow', function() {
-                        $(document).off();
-                        $('body').load('.');
-                        $('body').fadeIn('slow');
-                    });
+                });
+                $('#dis').fadeIn('slow', function() {
+                    setTimeout(function() {
+                        $('body').fadeOut('slow', function() {
+                            $(document).off();
+                            $('body').load('.');
+                            $('body').fadeIn('slow');
+                        });
+                    }, 5000);
                 });
             });
         return false;
@@ -68,11 +75,11 @@ $(document).ready(function() {
     $(document).on('submit', '#diary-PasswordForm', function() {
         $.post('password.php', $(this).serialize())
             .done(function(data) {
-                $('#dis').fadeOut();
-                $('#dis').fadeIn('slow', function() {
+                $('#diary-PasswordForm').wrap('<fieldset disabled></fieldset>');
+                $('#dis').fadeOut('slow', function() {
                     $('#dis').html('<div class="alert alert-info">' + data + '</div>');
-                    $('#diary-PasswordForm')[0].reset();
                 });
+                $('#dis').fadeIn();
             });
         return false;
     });

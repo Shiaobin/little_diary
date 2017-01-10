@@ -29,7 +29,9 @@ $stmt->execute();
             $('#btn-add').click(function() {
                 $('.content-loader').fadeOut('slow', function() {
                     $('.content-loader').fadeIn('slow');
-                    $('.content-loader').load('add_form.php');
+                    $('.content-loader').load('add_form.php', function() {
+                        $('#diary-SaveForm input:first').focus();
+                    });
                     $('#btn-add').hide();
                     $('#btn-view').show();
                 });
@@ -46,7 +48,10 @@ $stmt->execute();
             $('#btn-password').click(function() {
                 $('.content-loader').fadeOut('slow', function() {
                     $('.content-loader').fadeIn('slow');
-                    $('.content-loader').load('password_form.php');
+                    $('.content-loader').load('password_form.php', function() {
+                        // $('#diary-PasswordForm input').first().focus();
+                        $('#diary-PasswordForm input:first').focus();
+                    });
                     $('#btn-password').hide();
                     $('#btn-view').show();
                 });
