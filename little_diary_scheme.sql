@@ -30,7 +30,7 @@ CREATE TABLE IF NOT EXISTS `little_diary_configs` (
   `config` varchar(21) COLLATE utf8_unicode_ci NOT NULL,
   `value` varchar(101) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`config`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -40,7 +40,7 @@ CREATE TABLE IF NOT EXISTS `little_diary_configs` (
 
 CREATE TABLE IF NOT EXISTS `little_diary_posts` (
   `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `title` varchar(21) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `title` varchar(21) COLLATE utf8_unicode_ci NOT NULL,
   `article` varchar(101) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`time`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
