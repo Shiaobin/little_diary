@@ -75,7 +75,8 @@ $(document).ready(function() {
     $(document).on('submit', '#diary-PasswordForm', function() {
         $.post('password.php', $(this).serialize())
             .done(function(data) {
-                $('#diary-PasswordForm').wrap('<fieldset disabled></fieldset>');
+                $('#diary-PasswordForm').trigger('reset');
+                $('#diary-PasswordForm input:first').focus();
                 $('#dis').fadeOut('slow', function() {
                     $('#dis').html('<div class="alert alert-info">' + data + '</div>');
                 });
